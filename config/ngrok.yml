@@ -1,0 +1,7 @@
+version: "2"
+authtoken: 33pziIGK3yFWlQJFT2mLLn6JSHv_5QweZfqVM9zkZoArbiqsN
+tunnels:
+  laravel:
+    addr: 8000
+    proto: http
+    subdomain: cyberlifeshop
