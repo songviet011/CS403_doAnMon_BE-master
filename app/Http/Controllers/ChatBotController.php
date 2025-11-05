@@ -63,15 +63,11 @@ class ChatBotController extends Controller
             $bestMatch = $topMatches[0]['content'] ?? null;
             $bestScore = isset($topMatches[0]['score']) ? floatval($topMatches[0]['score']) : null;
             $context = implode("\n", array_column($topMatches, 'content'));
-<<<<<<< HEAD
+
             $prompt = "Dưới đây là thông tin nội bộ của website SHOP CS403:\n{$context}\n\n"
                 . "Người dùng hỏi: {$message}\n"
                 . "Bạn là một nhân viên tư vấn thông minh của SHOP CS403, nhiệm vụ là trả lời câu hỏi khách hàng dựa trên dữ liệu nội bộ. "
-=======
-            $prompt = "Dưới đây là thông tin nội bộ của website CyberLife:\n{$context}\n\n"
-                . "Người dùng hỏi: {$message}\n"
-                . "Bạn là một nhân viên tư vấn thông minh của CyberLife, nhiệm vụ là trả lời câu hỏi khách hàng dựa trên dữ liệu nội bộ. "
->>>>>>> 533f6d0ddad997d6e7f22d7b5dc3b8c89c757669
+
                 . "Hãy trả lời theo các hướng dẫn sau:\n\n"
                 . "1. **Ưu tiên thông tin thực tế và đầy đủ**:\n"
                 . "   - Nếu câu hỏi liên quan đến voucher, hãy trả lời đầy đủ: tên voucher, giá trị giảm, điều kiện áp dụng, hạn sử dụng.\n"
