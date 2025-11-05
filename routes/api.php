@@ -102,6 +102,7 @@ Route::post('customer/chat', [ChatBotController::class, 'chat']);
 Route::post('/customer/products/{id}/review', [ProductsController::class, 'addReview'])->middleware('customerMiddle');
 Route::get('/customer/products/{id}/reviews', [ProductsController::class, 'getReviews']);
 
+<<<<<<< HEAD
 //Train Chatbot
 use App\Http\Controllers\TrainChatController;
 
@@ -110,3 +111,5 @@ Route::post('/admin/chat/train-products', [TrainChatController::class, 'trainPro
 Route::post('/admin/chat/train-vouchers', [TrainChatController::class, 'trainVouchers']);
 Route::post('/admin/chat/train-static',   [TrainChatController::class, 'trainStatic']);
 
+=======
+>>>>>>> 533f6d0ddad997d6e7f22d7b5dc3b8c89c757669

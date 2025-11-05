@@ -14,6 +14,12 @@ use App\Models\Customer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+<<<<<<< HEAD
+=======
+use Illuminate\Support\Facades\Hash;
+
+
+>>>>>>> 533f6d0ddad997d6e7f22d7b5dc3b8c89c757669
 
 class AdminAccountController extends Controller
 {
@@ -57,6 +63,7 @@ class AdminAccountController extends Controller
             'message' => "Đã xóa tài khoản thành công.",
         ]);
     }
+<<<<<<< HEAD
     public function Login(AdminDangNhapRequest $request)
     {
         $check = AdminAccount::where('email', $request->email)
@@ -75,6 +82,35 @@ class AdminAccountController extends Controller
             ]);
         }
     }
+=======
+
+
+public function Login(AdminDangNhapRequest $request)
+{
+    $admin = AdminAccount::where('email', $request->email)->first();
+
+    if (!$admin) {
+        return response()->json([
+            'status' => 0,
+            'message' => "Email không tồn tại.",
+        ]);
+    }
+
+    if ($request->password !== $admin->password){
+        return response()->json([
+            'status' => 0,
+            'message' => "Mật khẩu không chính xác.",
+        ]);
+    }
+
+    return response()->json([
+        'status' => 1,
+        'message' => "Đăng nhập thành công.",
+        'token' => $admin->createToken('token_admin')->plainTextToken,
+    ]);
+}
+
+>>>>>>> 533f6d0ddad997d6e7f22d7b5dc3b8c89c757669
     public function checkToken()
     {
         $user_login = Auth::guard('sanctum')->user();
