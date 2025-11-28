@@ -91,8 +91,8 @@ Route::post('/customer/gio-hang/checkout',[GioHangController::class, 'checkout']
 Route::post('/customer/gio-hang/update-quantity/{id}',[GioHangController::class, 'updateQuantity'])->middleware('customerMiddle');
 
 //Thanh Toán
-Route::post('/hooks/sepay-payment', [SePayWebhookController::class, 'handle']);
-Route::post('/hooks/sepay-payment/check-status', [SePayWebhookController::class, 'checkStatus']);
+Route::post('/sepay/webhook', [SePayWebhookController::class, 'handle']);
+Route::post('/sepay/webhook/check-status', [SePayWebhookController::class, 'checkStatus']);
 
 
 //Chatbot
